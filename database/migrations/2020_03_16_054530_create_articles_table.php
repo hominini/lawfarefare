@@ -15,9 +15,14 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->smallInteger('article_number');
+            // numero del articulo, unsigned small integer permite 65535 numeros enteros
+            $table->unsignedSmallInteger('article_number');
+            // el cuerpo del artículo al momento es text, pero talvez se deba moverlo a otra tabla cuando
+            // se tenga mejor idea de la estructura que tiene el contenido del cuerpo de un articulo.
             $table->text('article_body');
-            $table->smallInteger('category_id');
+            // id de la categoria a la que pertenece el articulo, esta tiene que ser un nodo terminal
+            // en el arbol de categorias.
+            $table->unsignedSmallInteger('category_id');
             $table->timestamps();
         });
     }

@@ -15,9 +15,14 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            // nombre de la categoría por ejemplo título, capítulo sección
             $table->text('name');
+            // en las leyes revisadas hasta ahora cada categoría va acompañada de un breve título
+            // que se refiera al tema tratado en dicha categoría
             $table->text('subject')->nullable();
-            $table->smallInteger('parent_id')->default(-1);
+            // esta tabla tiene una referencia a sí mismo, con el fin de organizar a las categorías
+            // de manera jerárquica, TODO: encontrar una mejor forma de modelar jerarquías
+            $table->smallInteger('parent_id')->default(null);
             $table->timestamps();
         });
     }
