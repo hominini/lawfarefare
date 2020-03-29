@@ -1,99 +1,110 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Fonts -->
+    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div id="app" class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+        <div class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
+                    <p class="uk-text-center">Fade</p>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-scale-up">
+                    <p class="uk-text-center">Scale Up</p>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-scale-down">
+                    <p class="uk-text-center">Scale Down</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-shake">
+                    <p class="uk-text-center">Shake</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left">
+                    <p class="uk-text-center">Left</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-top">
+                    <p class="uk-text-center">Top</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-bottom">
+                    <p class="uk-text-center">Bottom</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right">
+                    <p class="uk-text-center">Right</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left-small">
+                    <p class="uk-text-center">Left Small</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-top-small">
+                    <p class="uk-text-center">Top Small</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-bottom-small">
+                    <p class="uk-text-center">Bottom Small</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right-small">
+                    <p class="uk-text-center">Right Small</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left-medium">
+                    <p class="uk-text-center">Left Medium</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-top-medium">
+                    <p class="uk-text-center">Top Medium</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-bottom-medium">
+                    <p class="uk-text-center">Bottom Medium</p>
+                </div>
+            </div>
+            <div class="uk-animation-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right-medium">
+                    <p class="uk-text-center">Right Medium</p>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+  <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+</body>
 </html>
