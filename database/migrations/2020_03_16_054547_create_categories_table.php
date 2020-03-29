@@ -22,7 +22,7 @@ class CreateCategoriesTable extends Migration
             $table->text('subject')->nullable();
             // esta tabla tiene una referencia a sí mismo, con el fin de organizar a las categorías
             // de manera jerárquica, TODO: encontrar una mejor forma de modelar jerarquías
-            $table->smallInteger('parent_id')->default(null);
+            $table->unsignedSmallInteger('parent_id')->nullable();
             $table->timestamps();
         });
     }
