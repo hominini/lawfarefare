@@ -1,20 +1,8 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// // Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
+// // Variables
+// @import 'variables';
 
-// UIKit
-/* Add some uikit variables if desired */
-$global-font-family: 'Roboto', sans-serif;
-$base-body-font-weight: 300;
-$base-heading-font-weight: 300;
-
-@import "~uikit/src/scss/variables-theme.scss";
-@import "~uikit/src/scss/variables.scss";
-
-@import "~uikit/src/scss/mixins.scss";
-@import "~uikit/src/scss/mixins-theme.scss";
-
-@import "~uikit/src/scss/uikit.scss";
-@import "~uikit/src/scss/uikit-theme.scss";
+// // Bootstrap
+// @import '~bootstrap/scss/bootstrap';
